@@ -27,7 +27,7 @@ class Net(nn.Module):
         
         ## Note that among the layers to add, consider including:
         # maxpooling layers, multiple conv layers, fully-connected layers, and other layers (such as dropout or batch normalization) to avoid overfitting
-        self.pool = nn.MaxPool2d(kernel = 2, stride = 2)
+        self.pool = nn.MaxPool2d(kernel_size = 2, stride = 2)
         
         # Fully Connected Layers
         self.fc1 = nn.Linear(in_features = 36864, out_features = 1000) # The number of input gained by "print("Flatten size: ", x.shape)" in below
@@ -49,7 +49,7 @@ class Net(nn.Module):
         ## x is the input image and, as an example, here you may choose to include a pool/conv step:
         ## x = self.pool(F.relu(self.conv1(x)))
         
-                # First - Convolution + Activation + Pooling + Dropout
+        # First - Convolution + Activation + Pooling + Dropout
         x = self.conv1(x)
         x = F.relu(x)
         x = self.pool(x)
@@ -83,7 +83,6 @@ class Net(nn.Module):
         # Final Dense Layer
         x = self.fc3(x)
         #print("Final dense size: ", x.shape)
-        
         
         # a modified x, having gone through all the layers of your model, should be returned
         return x
