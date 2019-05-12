@@ -1,0 +1,6 @@
+# Don't track content of these folders
+Projects/P1_Facial_Keypoints/saved_models
+
+# Compiled source #
+###################
+*.pt
